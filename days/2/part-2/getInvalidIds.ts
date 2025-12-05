@@ -20,7 +20,7 @@ export const getInvalidIds = (input: string): number[] => {
     for (let idToCheck = startId; idToCheck <= endId; idToCheck++) {
       const idString = idToCheck.toString();
 
-      const halfLen = idString.length / 2;
+      const halfLen = Math.floor(idString.length / 2);
       for (let position = 0; position < halfLen; position++) {
         const segment = idString.slice(0, position + 1);
         const idStringWithoutSegment = idString.replaceAll(segment, '');
