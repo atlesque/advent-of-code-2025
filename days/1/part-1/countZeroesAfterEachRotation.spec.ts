@@ -1,8 +1,8 @@
 import { describe, it } from 'vitest';
 import { puzzleInput } from '../puzzle-input';
-import { getTotalZeroesInRotations } from './getTotalZeroesInRotations';
+import { countZeroesAfterEachRotation } from './countZeroesAfterEachRotation';
 
-describe('Day 1', () => {
+describe('countZeroesAfterEachRotation', () => {
   it('should return the number of times the dial is left pointing at 0 after any rotation in the sequence', () => {
     const startPosition = 50;
     const rotations = [
@@ -18,13 +18,16 @@ describe('Day 1', () => {
       'L82',
     ];
     const expectedTotalZeroes = 3;
-    const totalZeroes = getTotalZeroesInRotations({ startPosition, rotations });
+    const totalZeroes = countZeroesAfterEachRotation({
+      startPosition,
+      rotations,
+    });
     expect(totalZeroes).toEqual(expectedTotalZeroes);
   });
 
   it('should solve the challenge input', () => {
     const startPosition = 50;
-    const totalZeroes = getTotalZeroesInRotations({
+    const totalZeroes = countZeroesAfterEachRotation({
       startPosition,
       rotations: puzzleInput,
     });

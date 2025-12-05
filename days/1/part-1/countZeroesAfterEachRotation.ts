@@ -5,7 +5,7 @@ interface Props {
   rotations: string[];
 }
 
-export const getTotalZeroesInRotations = ({
+export const countZeroesAfterEachRotation = ({
   startPosition = 0,
   rotations,
 }: Props): number => {
