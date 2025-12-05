@@ -1,5 +1,5 @@
 import { describe, it } from 'vitest';
-import { getTotalZeroesInRotations } from './dial-solver';
+import { getTotalZeroesInRotations } from './getTotalZeroesInRotations';
 import { puzzleInput } from './puzzle-input';
 
 describe('Day 1', () => {
