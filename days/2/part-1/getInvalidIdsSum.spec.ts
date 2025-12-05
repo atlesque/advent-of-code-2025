@@ -1,3 +1,4 @@
+import { puzzleInput } from '../puzzle-input';
 import { getInvalidIdsSum } from './getInvalidIdsSum';
 
 describe('getInvalidIdsSum', () => {
@@ -15,5 +16,10 @@ describe('getInvalidIdsSum', () => {
     const input = '1698522-1698528';
     const invalidIdsSum = getInvalidIdsSum(input);
     expect(invalidIdsSum).toBe(0);
+  });
+  it('should solve the challenge input', () => {
+    const input = puzzleInput;
+    const invalidIdsSum = getInvalidIdsSum(input);
+    expect(invalidIdsSum).toBe(8576933996);
   });
 });
