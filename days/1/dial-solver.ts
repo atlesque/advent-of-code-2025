@@ -1,11 +1,14 @@
-import { Dial } from "./dial";
+import { Dial } from './dial';
 
 interface Props {
   startPosition?: number;
   rotations: string[];
 }
 
-export const getTotalZeroesInRotations = ({startPosition = 0, rotations}: Props): number => {
+export const getTotalZeroesInRotations = ({
+  startPosition = 0,
+  rotations,
+}: Props): number => {
   const dial = new Dial(startPosition);
   let zeroCount = 0;
 
@@ -17,4 +20,4 @@ export const getTotalZeroesInRotations = ({startPosition = 0, rotations}: Props)
   }
 
   return zeroCount;
-}
+};
