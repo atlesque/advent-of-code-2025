@@ -34,4 +34,9 @@ describe('Dial', () => {
     dial.rotate('R80');
     expect(dial.getPosition()).toEqual(10);
   });
+  it('should handle a rotation with a high number of clicks', () => {
+    const dial = new Dial(50);
+    dial.rotate('R1000');
+    expect(dial.getPosition()).toEqual(50);
+  });
 });
