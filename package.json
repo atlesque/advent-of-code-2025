@@ -8,7 +8,9 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "@typescript-eslint/parser": "^8.48.1",
     "@vitest/ui": "^4.0.15",
     "eslint": "^9.39.1",
+    "prettier": "^3.7.4",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.1",
     "vitest": "^4.0.15"
