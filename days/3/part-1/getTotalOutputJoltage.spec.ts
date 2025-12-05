@@ -1,5 +1,5 @@
 import { getTotalOutputJoltage } from './getTotalOutputJoltage';
-import { puzzleInput } from './puzzle-input';
+import { puzzleInput } from '../puzzle-input';
 
 describe('getTotalOutputJoltage', () => {
   it('should calculate the total output joltage from multiple battery banks', () => {
