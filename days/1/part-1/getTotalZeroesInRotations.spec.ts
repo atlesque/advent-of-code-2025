@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest';
+import { puzzleInput } from '../puzzle-input';
 import { getTotalZeroesInRotations } from './getTotalZeroesInRotations';
-import { puzzleInput } from './puzzle-input';
 
 describe('Day 1', () => {
   it('should return the number of times the dial is left pointing at 0 after any rotation in the sequence', () => {

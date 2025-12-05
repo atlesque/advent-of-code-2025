@@ -1,4 +1,4 @@
-import { Dial } from './dial';
+import { Dial } from '../dial';
 
 interface Props {
   startPosition?: number;
