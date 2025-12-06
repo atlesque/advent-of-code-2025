@@ -8,7 +8,7 @@ interface Database {
   ingredients: number[];
 }
 
-const parseDatabaseInput = (input: string): Database => {
+export const parseDatabaseInput = (input: string): Database => {
   const lines = input
     .trim()
     .split('\n')
