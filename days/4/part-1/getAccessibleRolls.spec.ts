@@ -4,7 +4,8 @@ import { getAccessibleRolls } from './getAccessibleRolls';
 describe('getAccessibleRolls', () => {
   it('should return 0 rolls for an empty input', () => {
     const input = '';
-    expect(getAccessibleRolls(input)).toBe(0);
+    const { totalAccessibleRolls } = getAccessibleRolls(input);
+    expect(totalAccessibleRolls).toBe(0);
   });
   it('should return the total accessible rolls', () => {
     const input = `
@@ -19,10 +20,12 @@ describe('getAccessibleRolls', () => {
     .@@@@@@@@.
     @.@.@@@.@.
     `;
-    expect(getAccessibleRolls(input)).toBe(13);
+    const { totalAccessibleRolls } = getAccessibleRolls(input);
+    expect(totalAccessibleRolls).toBe(13);
   });
   it('should solve the puzzle input', () => {
     const input = puzzleInput;
-    expect(getAccessibleRolls(input)).toBe(1409);
+    const { totalAccessibleRolls } = getAccessibleRolls(input);
+    expect(totalAccessibleRolls).toBe(1409);
   });
 });

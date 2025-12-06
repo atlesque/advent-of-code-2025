@@ -1,4 +1,4 @@
-const getRollsArray = (input: string): string[][] => {
+export const getRollsArray = (input: string): string[][] => {
   const lines = input
     .trim()
     .split('\n')
@@ -13,7 +13,7 @@ const getRollsArray = (input: string): string[][] => {
   return result;
 };
 
-const isRollAccessible = (
+export const isRollAccessible = (
   rollsArray: string[][],
   rowIndex: number,
   colIndex: number,
@@ -38,16 +38,23 @@ const isRollAccessible = (
   return totalSurroundingRolls <= maxSurroundingRolls;
 };
 
-export const getAccessibleRolls = (input: string) => {
+interface AccessibleRollsResult {
+  totalAccessibleRolls: number;
+  accessibleRollsArray: string[][];
+}
+
+export const getAccessibleRolls = (input: string): AccessibleRollsResult => {
   const rollsArray = getRollsArray(input);
+  const accessibleRollsArray = JSON.parse(JSON.stringify(rollsArray));
   let totalAccessibleRolls = 0;
   for (let rowIndex = 0; rowIndex < rollsArray.length; rowIndex++) {
     const row = rollsArray[rowIndex];
     for (let colIndex = 0; colIndex < row.length; colIndex++) {
       if (isRollAccessible(rollsArray, rowIndex, colIndex)) {
         totalAccessibleRolls++;
+        accessibleRollsArray[rowIndex][colIndex] = 'x';
       }
     }
   }
-  return totalAccessibleRolls;
+  return { totalAccessibleRolls, accessibleRollsArray };
 };
