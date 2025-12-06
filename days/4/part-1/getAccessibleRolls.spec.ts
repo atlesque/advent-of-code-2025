@@ -1,3 +1,4 @@
+import { puzzleInput } from '../puzzle-input';
 import { getAccessibleRolls } from './getAccessibleRolls';
 
 describe('getAccessibleRolls', () => {
@@ -19,5 +20,9 @@ describe('getAccessibleRolls', () => {
     @.@.@@@.@.
     `;
     expect(getAccessibleRolls(input)).toBe(13);
+  });
+  it('should solve the puzzle input', () => {
+    const input = puzzleInput;
+    expect(getAccessibleRolls(input)).toBe(1409);
   });
 });
