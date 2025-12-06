@@ -9,7 +9,7 @@ const parseBatteryBankString = (batteryBankString: string): number[] =>
 export const getMaxBankJoltage = ({
   batteryBankString,
   totalBatteries,
-}: Props): number | undefined => {
+}: Props): number => {
   const batteryBank = parseBatteryBankString(batteryBankString);
 
   const selectedBatteries = [];
