@@ -1,3 +1,4 @@
+import { puzzleInput } from '../puzzle-input';
 import { countFreshIngredients } from './countFreshIngredients';
 
 describe('countFreshIngredients', () => {
@@ -42,5 +43,10 @@ describe('countFreshIngredients', () => {
     `;
     const result = countFreshIngredients(input);
     expect(result).toBe(3);
+  });
+  it('should solve the puzzle input', () => {
+    const input = puzzleInput;
+    const result = countFreshIngredients(input);
+    expect(result).toBe(756);
   });
 });
