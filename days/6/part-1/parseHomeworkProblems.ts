@@ -1,4 +1,4 @@
-type Operator = '+' | '-' | '*' | '/';
+export type Operator = '+' | '-' | '*' | '/';
 
 export interface Problem {
   numbers: number[];
