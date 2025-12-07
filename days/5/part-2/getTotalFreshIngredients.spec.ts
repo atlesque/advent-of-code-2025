@@ -2,6 +2,46 @@ import { puzzleInput } from '../puzzle-input';
 import { getTotalFreshIngredients } from './getTotalFreshIngredients';
 
 describe('getTotalFreshIngredients', () => {
+  it('should count all fresh ingredients in a single range', () => {
+    const input = `
+    1-10
+
+    1
+    `;
+    const result = getTotalFreshIngredients(input);
+    expect(result).toBe(10);
+  });
+  it('should count all fresh ingredients in separate ranges', () => {
+    const input = `
+    1-10
+    21-30
+
+    1
+    15
+    `;
+    const result = getTotalFreshIngredients(input);
+    expect(result).toBe(20);
+  });
+  it('should only count ingredients once if ranges overlap completely', () => {
+    const input = `
+    1-10
+    5-9
+
+    1
+    `;
+    const result = getTotalFreshIngredients(input);
+    expect(result).toBe(10);
+  });
+  it('should only count ingredients once if ranges overlap completely in reverse', () => {
+    const input = `
+    5-9
+    1-10
+
+    1
+    `;
+    const result = getTotalFreshIngredients(input);
+    expect(result).toBe(10);
+  });
   it('should count all fresh ingredients in all ranges', () => {
     const input = `
     3-5
@@ -19,24 +59,9 @@ describe('getTotalFreshIngredients', () => {
     const result = getTotalFreshIngredients(input);
     expect(result).toBe(14);
   });
-  it.skip('should handle big ranges', () => {
-    const input = `
-    121847024509459-126345620041267
-    522880293422404-523179474172233
-    158459878825465-159131956260867
-    213743501161201-219471291456959
-
-    494837294376908
-    435660505746994
-    99786817997391
-    472909760977579
-    `;
-    const result = getTotalFreshIngredients(input);
-    expect(result).toBe(14);
-  });
-  it.skip('should solve the puzzle input', () => {
+  it('should solve the puzzle input', () => {
     const input = puzzleInput;
     const result = getTotalFreshIngredients(input);
-    expect(result).toBe(756);
+    expect(result).toBe(355555479253787);
   });
 });
