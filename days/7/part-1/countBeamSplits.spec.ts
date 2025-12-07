@@ -3,18 +3,12 @@ import { countBeamSplits } from './countBeamSplits';
 
 describe('countBeamSplits', () => {
   it('should return 0 when no splits occur', () => {
-    const input = readFileSync(
-      'days/7/part-1/test-input-no-splits.txt',
-      'utf-8',
-    );
+    const input = readFileSync('days/7/test-input-no-splits.txt', 'utf-8');
     const result = countBeamSplits(input);
     expect(result).toBe(0);
   });
   it('should should count a single split', () => {
-    const input = readFileSync(
-      'days/7/part-1/test-input-single-split.txt',
-      'utf-8',
-    );
+    const input = readFileSync('days/7/test-input-single-split.txt', 'utf-8');
     const result = countBeamSplits(input);
     expect(result).toBe(1);
   });
