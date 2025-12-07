@@ -12,9 +12,6 @@ describe('parseHomeworkProblems', () => {
     ];
 
     const result = parseHomeworkProblems(input);
-    expect(result[0]).toEqual(expectedOutput[0]);
-    expect(result[1]).toEqual(expectedOutput[1]);
-    expect(result[2]).toEqual(expectedOutput[2]);
-    expect(result[3]).toEqual(expectedOutput[3]);
+    expect(result).toEqual(expectedOutput);
   });
 });
