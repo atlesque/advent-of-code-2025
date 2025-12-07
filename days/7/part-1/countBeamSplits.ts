@@ -1,4 +1,4 @@
-const renderBeamPath = (input: string): string[][] => {
+export const renderBeamPath = (input: string): string[][] => {
   const beamArray = input.split('\n').map((line) => line.split(''));
   const beamStart = beamArray[0].indexOf('S');
   // Add initial beam going down
