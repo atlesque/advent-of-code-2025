@@ -19,7 +19,7 @@ describe('countBeamSplits', () => {
     expect(result).toBe(1);
   });
   it('should return correct count for the test input', () => {
-    const input = readFileSync('days/7/part-1/test-input.txt', 'utf-8');
+    const input = readFileSync('days/7/test-input.txt', 'utf-8');
     const result = countBeamSplits(input);
     expect(result).toBe(21);
   });
