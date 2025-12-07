@@ -23,4 +23,9 @@ describe('countBeamSplits', () => {
     const result = countBeamSplits(input);
     expect(result).toBe(21);
   });
+  it('should solve the puzzle input', () => {
+    const input = readFileSync('days/7/puzzle-input.txt', 'utf-8');
+    const result = countBeamSplits(input);
+    expect(result).toBe(1646);
+  });
 });
