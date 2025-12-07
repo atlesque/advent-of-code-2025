@@ -1,12 +1,20 @@
-interface Range {
+export interface IngredientsRange {
   start: number;
   end: number;
 }
 
 interface Database {
-  freshIngredientsRanges: Range[];
+  freshIngredientsRanges: IngredientsRange[];
   ingredients: number[];
 }
+
+const parseIngredientsRange = (input: string): IngredientsRange => {
+  const [start, end] = input.split('-').map(Number);
+  return {
+    start,
+    end,
+  };
+};
 
 export const parseDatabaseInput = (input: string): Database => {
   const lines = input
@@ -14,15 +22,15 @@ export const parseDatabaseInput = (input: string): Database => {
     .split('\n')
     .map((line) => line.trim());
   const separatorIndex = lines.indexOf('');
+  const freshIngredientsRanges = lines
+    .slice(0, separatorIndex)
+    .map(parseIngredientsRange);
+  const ingredients = lines
+    .slice(separatorIndex + 1)
+    .map((line) => Number(line));
   return {
-    freshIngredientsRanges: lines.slice(0, separatorIndex).map((range) => {
-      const [start, end] = range.split('-').map(Number);
-      return {
-        start,
-        end,
-      };
-    }),
-    ingredients: lines.slice(separatorIndex + 1).map((line) => Number(line)),
+    freshIngredientsRanges,
+    ingredients,
   };
 };
 
