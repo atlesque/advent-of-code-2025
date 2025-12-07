@@ -1,4 +1,4 @@
-import { puzzleInput } from '../puzzle-input';
+import { readFileSync } from 'fs';
 import { parseHomeworkProblems, Problem } from './parseHomeworkProblems';
 import { solveHomework } from './solveHomework';
 
@@ -14,7 +14,7 @@ describe('solveHomework', () => {
     expect(result).toBe(4277556);
   });
   it('should solve the puzzle input correctly', () => {
-    const input = puzzleInput;
+    const input = readFileSync('./days/6/puzzle-input.txt', 'utf-8');
     const problems = parseHomeworkProblems(input);
     const result = solveHomework(problems);
     expect(result).toBe(4951502530386);
