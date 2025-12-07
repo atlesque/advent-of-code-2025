@@ -6,10 +6,13 @@ export interface Problem {
 }
 
 export const parseHomeworkProblems = (input: string): Problem[] => {
-  const lines = input.trim().split('\n').map(line => line.trim());
+  const lines = input
+    .trim()
+    .split('\n')
+    .map((line) => line.trim());
   const numbers: number[][] = [];
   for (let i = 0; i < lines.length - 1; i++) {
-    const lineNumbers = lines[i].split(/\s+/).map(num => parseInt(num, 10));
+    const lineNumbers = lines[i].split(/\s+/).map((num) => parseInt(num, 10));
     numbers.push(lineNumbers);
   }
   const operators = lines[lines.length - 1].split(/\s+/) as Operator[];
