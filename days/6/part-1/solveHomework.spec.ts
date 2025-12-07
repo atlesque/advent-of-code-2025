@@ -1,4 +1,5 @@
-import { Problem } from './parseHomeworkProblems';
+import { puzzleInput } from '../puzzle-input';
+import { parseHomeworkProblems, Problem } from './parseHomeworkProblems';
 import { solveHomework } from './solveHomework';
 
 describe('solveHomework', () => {
@@ -11,5 +12,11 @@ describe('solveHomework', () => {
     ];
     const result = solveHomework(problems);
     expect(result).toBe(4277556);
+  });
+  it('should solve the puzzle input correctly', () => {
+    const input = puzzleInput;
+    const problems = parseHomeworkProblems(input);
+    const result = solveHomework(problems);
+    expect(result).toBe(4951502530386);
   });
 });
