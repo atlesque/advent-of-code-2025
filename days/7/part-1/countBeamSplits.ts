@@ -3,7 +3,7 @@ export const renderBeamPath = (input: string): string[][] => {
   const beamStart = beamArray[0].indexOf('S');
   // Add initial beam going down
   beamArray[1][beamStart] = '|';
-  for (let i = 2; i < beamArray.length - 1; i++) {
+  for (let i = 2; i < beamArray.length; i++) {
     for (let j = 0; j < beamArray[i].length; j++) {
       const char = beamArray[i][j];
       const charAbove = beamArray[i - 1][j];
