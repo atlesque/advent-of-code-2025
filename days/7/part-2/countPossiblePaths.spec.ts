@@ -17,4 +17,9 @@ describe('countPossiblePaths', () => {
     const result = countPossiblePaths(input);
     expect(result).toBe(40);
   });
+  it('should solve the puzzle input', () => {
+    const input = readFileSync('days/7/puzzle-input.txt', 'utf-8');
+    const result = countPossiblePaths(input);
+    expect(result).toBe(32451134474991);
+  });
 });
