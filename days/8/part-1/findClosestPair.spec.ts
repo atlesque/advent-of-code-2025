@@ -15,7 +15,7 @@ describe('findClosestPair', () => {
     const result = findClosestPair(input);
     expect(result).toEqual(expectedOutput);
   });
-  it('should solve the test input correctly', () => {
+  it('should find the closest pair from the test input', () => {
     const input = readFileSync('./days/8/part-1/test-input.txt', 'utf-8');
     const coordinatesList = parseCoordinatesList(input);
     const expectedOutput = [
